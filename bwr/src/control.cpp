@@ -163,7 +163,7 @@ class CarController{
         if (dist_error < 60) { kp = 0.2; }
         else { kp = 0.32; }
         // clear I if needed
-        if (err < abs(Tools::deg2rad(5))){
+        if (abs(err) < Tools::deg2rad(5)){
             I = I + ki*err*(1/rate);
         } else { I = 0; }
 
