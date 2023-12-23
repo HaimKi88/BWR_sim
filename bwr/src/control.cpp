@@ -154,7 +154,7 @@ class CarController{
         }
     }
 
-    double velocityControl(double err) {
+    double steerControl(double err) {
         double kp;
         double kd = 0.1;
         double ki = 0.1;
@@ -198,7 +198,7 @@ class CarController{
         heading_error = calcHeadingErr();
         dist_error    = haversine(robo_loc, trgt_loc);
         
-        steer_cmd = velocityControl(heading_error);
+        steer_cmd = steerControl(heading_error);
         vel_cmd = velocityControl(dist_error,heading_error);
         
         if (arrived){
